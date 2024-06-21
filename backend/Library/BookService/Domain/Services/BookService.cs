@@ -1,5 +1,6 @@
 ﻿using BookService.Domain.Interfaces;
 using BookService.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookService.Domain.Services;
 
@@ -12,6 +13,8 @@ public class BookService : IBookService
         _bookRepository = bookRepository;
     }
 
-    public async Task<IEnumerable<Book>> GetBooksAsync() => await _bookRepository.GetBooksAsync();
-
+    public async Task<IEnumerable<Book>> GetBooksAsync()
+    {
+        return await _bookRepository.GetBooksAsQuery().ToListAsync();
+    }
 }

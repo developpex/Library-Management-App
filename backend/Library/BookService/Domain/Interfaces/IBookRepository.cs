@@ -4,5 +4,5 @@ namespace BookService.Domain.Interfaces;
 
 public interface IBookRepository
 {
-    Task<IEnumerable<Book>> GetBooksAsync();
+    IQueryable<Book> GetBooksAsQuery();
 }

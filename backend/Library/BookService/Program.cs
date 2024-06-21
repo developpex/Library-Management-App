@@ -1,5 +1,4 @@
 using BookService.Domain.Interfaces;
-using BookService.Domain.Services;
 using BookService.Infrastructure;
 using BookService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;

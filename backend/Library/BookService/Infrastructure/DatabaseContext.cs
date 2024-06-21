@@ -1,23 +1,22 @@
 ﻿using BookService.Domain.Models;
-using BookService.Infrastructure.DbModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookService.Infrastructure
 {
     public class DatabaseContext: DbContext
     {
-        protected readonly IConfiguration Configuration;
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+        {}
 
-        public DatabaseContext(IConfiguration configuration)
+        public DbSet<Book> Books => Set<Book>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            Configuration = configuration;
+            modelBuilder.Entity<Book>(book =>
+            {
+                book.ToTable("Books");
+                book.HasKey(b => b.Id);
+            });
         }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            options.UseSqlServer(Configuration.GetConnectionString("Library"));
-        }
-
-        public DbSet<DbBook> Books => Set<DbBook>();
     }
 }
