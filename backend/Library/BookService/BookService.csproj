@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Models\" />
     <Folder Include="Infrastructure\Interfaces\" />
   </ItemGroup>
 
