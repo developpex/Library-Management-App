@@ -1,11 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import "../node_modules/modern-normalize/modern-normalize.css";
 @import "../node_modules/primeflex/primeflex.scss";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 
 body {
   font-family: "Roboto", sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// //custom color theme
+// $custom-primary-palette: (
+//   50: #e9fbf0,
+//   100: #cff7de,
+//   200: #92edb3,
+//   300: #3fde7a,
+//   400: #21c45d,
+//   500: #1b9f4b,
+//   600: #189044,
+//   700: #157e3c,
+//   800: #126932,
+//   900: #0d4a23,
+//   950: #0a391b,
+//   contrast: (
+//     50: #000,
+//     100: #000,
+//   ),
+// );
+
+// $custom-primary: mat.define-palette($custom-primary-palette);
+// $custom-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// $custom-warn: mat.define-palette(mat.$red-palette);
+
+// $custom-theme: mat.define-light-theme(
+//   (
+//     color: (
+//       primary: $custom-primary,
+//       accent: $custom-accent,
+//       warn: $custom-warn,
+//     ),
+//   )
+// );
+
+// @include mat.all-component-themes($custom-primary);

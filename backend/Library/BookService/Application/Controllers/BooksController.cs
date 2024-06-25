@@ -22,13 +22,11 @@ public class BooksController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> GetBooks()
     {
-        try
+        if (!ModelState.IsValid)
         {
-            return Ok(await _bookService.GetBooksAsync());
+            return BadRequest(ModelState);
         }
-        catch (Exception exception)
-        {
-            return Problem(statusCode: 400, detail: exception.Message);
-        }
+       
+        return Ok(await _bookService.GetBooksAsync());
     }
 }

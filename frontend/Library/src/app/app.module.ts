@@ -11,6 +11,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { BooksService } from './services/books.service';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BookDialogComponent } from './book-dialog/book-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -19,8 +23,17 @@ import { BooksService } from './services/books.service';
     FooterComponent,
     HomeComponent,
     BooksComponent,
+    BookDialogComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatTableModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    MatButtonModule,
+    HttpClientModule,
+  ],
   providers: [provideAnimationsAsync(), BooksService],
   bootstrap: [AppComponent],
 })
