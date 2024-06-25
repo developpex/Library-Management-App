@@ -4,5 +4,6 @@
     &lt;TestId&gt;xUnit::5EA300DC-2DAF-4724-839F-62076B8947B0::net6.0::BookService.Tests.Controller.BooksControllerTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::5EA300DC-2DAF-4724-839F-62076B8947B0::net6.0::BookService.Tests.Infrastructure.SqlServerBookRepositoryTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::5EA300DC-2DAF-4724-839F-62076B8947B0::net6.0::BookService.Tests.Application.BooksControllerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5EA300DC-2DAF-4724-839F-62076B8947B0::net6.0::BookService.Tests.Domain.BookServiceTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

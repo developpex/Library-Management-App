@@ -4,24 +4,23 @@ using FakeItEasy;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookService.Tests.Application
+namespace BookService.Tests.Application;
+
+public class BooksControllerTests
 {
-    public class BooksControllerTests
+    private readonly IBookService _bookService = A.Fake<IBookService>();
+
+    [Fact]
+    public async void BooksController_GetBooks_ShouldReturnOK()
     {
-        private readonly IBookService _bookService = A.Fake<IBookService>();
+        //Arrange
+        var controller = new BooksController(_bookService);
 
-        [Fact]
-        public async void BooksController_GetBooks_ShouldReturnOK()
-        {
-            //Arrange
-            var controller = new BooksController(_bookService);
+        //Act
+        var result = await controller.GetBooks();
 
-            //Act
-            var result = await controller.GetBooks();
-
-            //Assert
-            result.Should().NotBeNull();
-            result.Should().BeOfType(typeof(OkObjectResult));
-        }
+        //Assert
+        result.Should().NotBeNull();
+        result.Should().BeOfType(typeof(OkObjectResult));
     }
 }

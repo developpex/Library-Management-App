@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "CYrcJzxOHXE3hh0ToH8pF1knpDBoYI/z6sXQtYcy/3tZ4iS3cBwJ/p61DtjZmmLyEt6oBvsQr5aOBD4tFLOXow==",
+  "dgSpecHash": "q1qCvBbRhG3Bro8LGJX2bIuapmyX+X2iLHrtwwS4ETMv8CHNha3tk8zmMV5Nc5je4C98xixgHhuzg7IMrq/0Rw==",
   "success": true,
   "projectFilePath": "C:\\Git\\Library-Management-App\\backend\\Library\\BookService.Tests\\BookService.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pvnie\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\pvnie\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
+    "C:\\Users\\pvnie\\.nuget\\packages\\entityframeworkcore.testing.fakeiteasy\\1.0.0.1\\entityframeworkcore.testing.fakeiteasy.1.0.0.1.nupkg.sha512",
     "C:\\Users\\pvnie\\.nuget\\packages\\fakeiteasy\\8.3.0\\fakeiteasy.8.3.0.nupkg.sha512",
     "C:\\Users\\pvnie\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\pvnie\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
@@ -89,6 +90,7 @@
     "C:\\Users\\pvnie\\.nuget\\packages\\system.globalization.calendars\\4.3.0\\system.globalization.calendars.4.3.0.nupkg.sha512",
     "C:\\Users\\pvnie\\.nuget\\packages\\system.globalization.extensions\\4.3.0\\system.globalization.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\pvnie\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.8.0\\system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
+    "C:\\Users\\pvnie\\.nuget\\packages\\system.interactive.async\\3.1.1\\system.interactive.async.3.1.1.nupkg.sha512",
     "C:\\Users\\pvnie\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\pvnie\\.nuget\\packages\\system.io.compression\\4.3.0\\system.io.compression.4.3.0.nupkg.sha512",
     "C:\\Users\\pvnie\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\system.io.compression.zipfile.4.3.0.nupkg.sha512",

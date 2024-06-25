@@ -147,3 +147,5 @@ C:\Git\Library-Management-App\backend\Library\BookService.Tests\bin\Debug\net6.0
 C:\Git\Library-Management-App\backend\Library\BookService.Tests\bin\Debug\net6.0\BookService.dll
 C:\Git\Library-Management-App\backend\Library\BookService.Tests\bin\Debug\net6.0\BookService.pdb
 C:\Git\Library-Management-App\backend\Library\BookService.Tests\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Git\Library-Management-App\backend\Library\BookService.Tests\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Testing.FakeItEasy.dll
+C:\Git\Library-Management-App\backend\Library\BookService.Tests\bin\Debug\net6.0\System.Interactive.Async.dll

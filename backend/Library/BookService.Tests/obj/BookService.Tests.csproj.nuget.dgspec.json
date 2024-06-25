@@ -48,6 +48,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EntityFrameworkCore.Testing.FakeItEasy": {
+              "target": "Package",
+              "version": "[1.0.0.1, )"
+            },
             "FakeItEasy": {
               "target": "Package",
               "version": "[8.3.0, )"
