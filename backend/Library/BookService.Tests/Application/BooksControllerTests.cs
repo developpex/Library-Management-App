@@ -1,11 +1,10 @@
 ﻿using BookService.Application.Controllers;
 using BookService.Domain.Interfaces;
-using BookService.Domain.Models;
 using FakeItEasy;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookService.Tests.Controller
+namespace BookService.Tests.Application
 {
     public class BooksControllerTests
     {
