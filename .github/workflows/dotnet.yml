@@ -21,14 +21,14 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
-    - name: Change directory to backend/Library
-      run: cd backend/Library
-
     - name: Restore dependencies
-      run: dotnet restore 
+      run: dotnet restore
+      working-directory: backend/Library
 
     - name: Build
       run: dotnet build --no-restore
+      working-directory: backend/Library
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: backend/Library
