@@ -22,7 +22,7 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Change directory to backend/Library
-      run: cd Backend/Library
+      run: cd backend/Library
 
     - name: Restore dependencies
       run: dotnet restore backend/Library
