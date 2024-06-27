@@ -1,10 +1,8 @@
-import { Input, Component, Output, EventEmitter, inject } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  FormBuilder,
-  Validators,
-} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -12,19 +10,28 @@ import {
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  fb = inject(FormBuilder);
-
   form = this.fb.nonNullable.group({
-    username: ['', Validators.required],
+    email: ['', Validators.required],
     password: ['', Validators.required],
   });
 
-  submit() {
-    if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
-    }
-  }
-  @Input() error: string | null = null;
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+    private notificationService: NotificationService
+  ) {}
 
-  @Output() submitEM = new EventEmitter();
+  submit() {
+    const rawForm = this.form.getRawValue();
+    this.authService.login(rawForm.email, rawForm.password).subscribe({
+      next: () => {
+        this.router.navigateByUrl('/');
+        this.notificationService.showSuccess('login succesfull');
+      },
+      error: (err) => {
+        this.notificationService.showError(err.code);
+      },
+    });
+  }
 }
