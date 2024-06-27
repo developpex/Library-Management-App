@@ -29,7 +29,7 @@ export class RegisterComponent {
       .register(rawForm.email, rawForm.username, rawForm.password)
       .subscribe({
         next: () => {
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('home');
           this.notificationService.showSuccess('registerd succesfull');
         },
         error: (err) => {
