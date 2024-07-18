@@ -2,7 +2,6 @@
 using BookService.Domain.Models;
 using FakeItEasy;
 using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
 
 namespace BookService.Tests.Domain;
 
