@@ -1,4 +1,5 @@
-﻿using BookService.Domain.Interfaces;
+﻿using BookService.Domain.Exceptions;
+using BookService.Domain.Interfaces;
 using BookService.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,5 +17,14 @@ public class BookService : IBookService
     public async Task<IEnumerable<Book>> GetBooksAsync()
     {
         return await _bookRepository.GetBooksAsQuery().ToListAsync();
+    }
+
+    public async Task<Book> GetBookByTitle(string title)
+    {
+        var book = await _bookRepository.GetBooksAsQuery()
+            .Where(book => book.Title == title)
+            .FirstOrDefaultAsync();
+
+        return book ?? throw new NotFoundException($"Book {title} not found");
     }
 }

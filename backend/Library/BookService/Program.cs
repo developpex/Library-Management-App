@@ -1,4 +1,6 @@
+using BookService.Domain.Mappers;
 using BookService.Domain.Interfaces;
+using BookService.Domain.Middlewares;
 using BookService.Infrastructure;
 using BookService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +20,9 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod()
             .AllowCredentials());
 });
+
+//mappers
+builder.Services.AddSingleton<IMapper, Mapper>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -40,6 +45,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
 }
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
