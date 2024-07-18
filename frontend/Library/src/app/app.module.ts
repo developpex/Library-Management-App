@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, importProvidersFrom } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,26 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { BookDialogComponent } from './book-dialog/book-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { AuthService } from './services/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NotificationService } from './services/notification.service';
+import { ToastrModule } from 'ngx-toastr';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyAtex5YBvvU_rApNhs0YBiGyV7EUPpFWPI',
+  authDomain: 'library-management-app-bc2e9.firebaseapp.com',
+  projectId: 'library-management-app-bc2e9',
+  storageBucket: 'library-management-app-bc2e9.appspot.com',
+  messagingSenderId: '83033360121',
+  appId: '1:83033360121:web:ee0e7aaf1a912c41de0428',
+};
 
 @NgModule({
   declarations: [
@@ -24,6 +45,8 @@ import { MatButtonModule } from '@angular/material/button';
     HomeComponent,
     BooksComponent,
     BookDialogComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +55,21 @@ import { MatButtonModule } from '@angular/material/button';
     MatPaginatorModule,
     MatDialogModule,
     MatButtonModule,
+    MatCardModule,
+    MatInputModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
-  providers: [provideAnimationsAsync(), BooksService],
+  providers: [
+    provideAnimationsAsync(),
+    BooksService,
+    AuthService,
+    NotificationService,
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideAuth(() => getAuth()),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
