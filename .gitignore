@@ -1,2 +1,4 @@
-
 /backend/Library/.vs
+*.vsidx
+*.cache
+

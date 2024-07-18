@@ -1,5 +1,11 @@
-<div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="container">
+  <table
+    mat-table
+    matSortActive="title"
+    matSortDirection="asc"
+    [dataSource]="dataSource"
+    class="mat-elevation-z8"
+  >
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef>Title</th>
       <td mat-cell *matCellDef="let book">{{ book.title }}</td>
