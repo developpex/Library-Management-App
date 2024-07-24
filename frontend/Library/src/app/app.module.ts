@@ -27,6 +27,8 @@ import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NotificationService } from './services/notification.service';
 import { ToastrModule } from 'ngx-toastr';
+import { MatSortModule } from '@angular/material/sort';
+import { SearchComponent } from './components/search/search.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAtex5YBvvU_rApNhs0YBiGyV7EUPpFWPI',
@@ -47,10 +49,12 @@ const firebaseConfig = {
     BookDialogComponent,
     LoginComponent,
     RegisterComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatSortModule,
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
