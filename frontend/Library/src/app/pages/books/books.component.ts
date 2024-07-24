@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { BookDialogComponent } from '../../book-dialog/book-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-books',
@@ -16,11 +17,17 @@ export class BooksComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource<Book>();
   clickedRows = new Set<Book>();
 
-  constructor(private booksService: BooksService, public dialog: MatDialog) {}
+  constructor(private booksService: BooksService, public dialog: MatDialog) {
+    this.dataSource.filterPredicate = (data: Book, filter: string) => {
+      return data.title.toLowerCase().includes(filter);
+    };
+  }
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator) private readonly paginator!: MatPaginator;
+  @ViewChild(MatSort) private readonly sort!: MatSort;
 
   ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
@@ -40,6 +47,10 @@ export class BooksComponent implements OnInit, AfterViewInit {
         console.log('Data fetch complete');
       },
     });
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue;
   }
 
   openDialog(book: Book): void {
